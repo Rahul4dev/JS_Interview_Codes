@@ -1,0 +1,48 @@
+1. Working with JSON 
+
+    let cart = { clothing: 'Pants' , groceries: 'Pav bajji Masala' };
+    
+    let jsonData = JSON.stringify(cart);
+     // will change into { "clothing" : "Pants" , "groceries" : "Pav bajji Masala" }
+    
+     // if we want to change the JSON data into an object:
+
+    let objectData = JSON.parse(jsonData);
+    
+2. Avoid using try-catch inside a loop
+
+    // do not do this..
+    
+    for(i = 0 ; condition ; i++) {
+        try { statements }
+        catch(err) { handle err }
+    }
+    
+    // instead use this 
+    
+    try {  
+        for(i = 0 ; condition ; i++) { statement }
+    }    
+    catch(err) { handle err }
+    
+3. Primitive operations can be faster than function calls 
+
+    // do not fall on function calls, it just add complex logic in codes.
+    
+    let min = Math.min(a,b);
+    
+    // do this..
+    
+    let min = a < b ? a : b ;
+    
+     With time and effort you should find alternates to such functions, especially for
+     complex codes otherwise it will add more complexity in your code.
+     
+4. Comma operator 
+
+    let a = 0;
+    let b = ( a++ , 41 );
+    console.log('a = ' + a);   // will show a = 1 i.e, increments the value of a.
+    console.log('b = ' + b);   // will show 41
+    
+5.
